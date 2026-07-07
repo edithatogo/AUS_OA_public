@@ -37,7 +37,8 @@ jobs:
       
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-      
+      - name: Fail on blocking code-scanning alerts
+        uses: edithatogo/.github/.github/actions/code-scanning-gate@main      
       - name: Dependency vulnerability check
         run: |
           Rscript -e "
